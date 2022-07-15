@@ -1,5 +1,5 @@
 <template>
-    <header class="d-flex justify-content-around align-items-center mt-4">
+    <header class="container d-flex justify-content-between align-items-center my-4">
           <img src="../assets/img/dc-logo.png" alt="DC logo">
           <ul>
             <li>Characters</li>
@@ -34,7 +34,9 @@ export default {
 
     li{
         display: inline-block;
-        padding: 0 10px;
+        padding: 0 15px;
+        text-transform: uppercase;
+        font-size: 13px;
     }
-    
+
 </style>
