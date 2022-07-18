@@ -6,15 +6,6 @@
         <nav>
             <ul class="m-0 p-0">
                 <li v-for="(link, index) in links" :key="index"> <a href="link.url"> {{ link.text }} </a></li>
-                <!-- <li class="active">Comics</li> 
-                <li>Movies</li>
-                <li>Tv</li>
-                <li>Games</li>
-                <li>Collectibles</li>
-                <li>Videos</li>
-                <li>Fans</li>
-                <li>News</li>
-                <li>Shop</li> -->
             </ul>
         </nav>
     </header>

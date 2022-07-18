@@ -61,11 +61,9 @@
                 
                 <div class="icon-footer d-flex align-items-center">
                     <h4 class="text-footer">Follow Us</h4>
-                    <img src="../assets/img/footer-facebook.png" alt="Facebook Logo">
-                    <img src="../assets/img/footer-twitter.png" alt="Twitter Logo">
-                    <img src="../assets/img/footer-youtube.png" alt="YouTube Logo">
-                    <img src="../assets/img/footer-pinterest.png" alt="Pinterest Logo">
-                    <img src="../assets/img/footer-periscope.png" alt="Periscope Logo">
+                    <div v-for="(social, index) in socials" :key="index">
+                        <img :src="require(`../assets/img/${social.imgUrl}`)" :alt="social.text">
+                    </div>
                 </div>
             </div>
         </div>
@@ -76,6 +74,32 @@
 <script>
 export default {
 
+    data: function(){
+        return{
+            socials:[
+                {
+                    imgUrl: "footer-facebook.png",
+                    text: "Facebook",
+                },
+                {
+                    imgUrl: "footer-twitter.png",
+                    text: "Twitter",
+                },
+                {
+                    imgUrl: "footer-youtube.png",
+                    text: "Youtube",
+                },
+                {
+                    imgUrl: "footer-pinterest.png",
+                    text: "Pinterest",
+                },
+                {
+                    imgUrl: "footer-periscope.png",
+                    text: "Periscope",
+                },
+            ]
+        }
+    }
 }
 </script>
 
