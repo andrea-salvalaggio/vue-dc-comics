@@ -3,48 +3,10 @@
         <div class="container-img">
             <div class="container">
                 <div class="d-flex justify-content-between">
-                    <div class="d-flex flex-column">
-                        <h4 class="pt-5">Dc Comics</h4>
+                    <div class="d-flex flex-column" v-for="(footerElement, index) in footerLinks" :key="index">
+                        <h4 class="pt-5"> {{ footerElement.title }} </h4>
                         <ul class="p-0">
-                            <li>Characters</li>
-                            <li>Comics</li>
-                            <li>Movies</li>
-                            <li>TV</li>
-                            <li>Games</li>
-                            <li>Videos</li>
-                            <li>News</li>
-                        </ul>
-
-                        <h4>Shop</h4>
-                        <ul class="p-0">
-                            <li>Shop DC</li>
-                            <li>Shop DC Collectibles</li>
-                        </ul>
-                    </div>
-                    <div class="d-flex flex-column">
-                        <h4 class="pt-5">Dc</h4>
-                        <ul class="p-0">
-                            <li>Term of use</li>
-                            <li>Privacy policy (New)</li>
-                            <li>Ad Choises</li>
-                            <li>Advertising</li>
-                            <li>Jobs</li>
-                            <li>Subscriptions</li>
-                            <li>Talent Workshops</li>
-                            <li>CPSC Certificates</li>
-                            <li>Ratings</li>
-                            <li>Shop Help</li>
-                            <li>Contact us</li>
-                        </ul>
-                    </div>
-                    <div class="d-flex flex-column">
-                        <h4 class="pt-5">Sites</h4>
-                        <ul class="p-0">
-                            <li>DC</li>
-                            <li>MAD Magazine</li>
-                            <li>DC Kids</li>
-                            <li>DC Universe</li>
-                            <li>DC Power Visa</li>
+                            <li v-for="(footerLink, footerLinkIndex) in footerElement.content" :key="footerLinkIndex"><a :href="footerLink.url"> {{ footerLink.text }} </a></li>
                         </ul>
                     </div>
                     <div class="wrapper">
@@ -53,6 +15,7 @@
                 </div>
             </div>
         </div>
+
         <div class="container py-5">
             <div class="d-flex justify-content-between align-items-center">
                 <div>
@@ -76,6 +39,131 @@ export default {
 
     data: function(){
         return{
+
+            footerLinks:[
+                {
+                    title: "dc comics",
+                    content: [
+                        {
+                            text: "Characters",
+                            url: "#",
+                        },
+                        {
+                            text: "Comics",
+                            url: "#",
+                        },
+                        {
+                            text: "Movies",
+                            url: "#",
+                        },
+                        {
+                            text: "TV",
+                            url: "#",
+                        },
+                        {
+                            text: "Games",
+                            url: "#",
+                        },
+                        {
+                            text: "Videos",
+                            url: "#",
+                        },
+                        {
+                            text: "News",
+                            url: "#",
+                        }
+                    ]
+                },
+                {
+                    title: "shop",
+                    content: [
+                        {
+                            text: "Shop DC",
+                            url: "#",
+                        },
+                        {
+                            text: "Shop DC Collectibles",
+                            url: "#",
+                        }
+                    ]
+                },
+                {
+                    title: "dc",
+                    content: [
+                        {
+                            text: "Term of use",
+                            url: "#",
+                        },
+                        {
+                            text: "Privacy Policy (new)",
+                            url: "#",
+                        },
+                        {
+                            text: "Ad choises",
+                            url: "#",
+                        },
+                        {
+                            text: "Advertising",
+                            url: "#",
+                        },
+                        {
+                            text: "Jobs",
+                            url: "#",
+                        },
+                        {
+                            text: "Subscription",
+                            url: "#",
+                        },
+                        {
+                            text: "Talent workshops",
+                            url: "#",
+                        },
+                        {
+                            text: "CPSC Certificates",
+                            url: "#",
+                        },
+                        {
+                            text: "Rating",
+                            url: "#",
+                        },
+                        {
+                            text: "Shop help",
+                            url: "#",
+                        },
+                        {
+                            text: "Contact us",
+                            url: "#",
+                        }
+                    ]
+                },
+                {
+                    title: "sites",
+                    content: [
+                        {
+                            text: "DC",
+                            url: "#",
+                        },
+                        {
+                            text: "MAD Magazine",
+                            url: "#",
+                        },
+                        {
+                            text: "DC Kids",
+                            url: "#",
+                        },
+                        {
+                            text: "DC Universe",
+                            url: "#",
+                        },
+                        {
+                            text: "DC Power Visa",
+                            url: "#",
+                        }
+                    ]
+                },
+            ],
+
+            
             socials:[
                 {
                     imgUrl: "footer-facebook.png",
@@ -96,7 +184,7 @@ export default {
                 {
                     imgUrl: "footer-periscope.png",
                     text: "Periscope",
-                },
+                }
             ]
         }
     }
@@ -116,24 +204,29 @@ export default {
     }
 
     li{
-        color: #959595;
         list-style: none;
         font-weight: 300;
         letter-spacing: 1px;
+
+        a{
+            color: #959595;
+            text-decoration: none;
+        }
     }
     .container-img{
         background-image: url("../assets/img/footer-bg.jpg");
         background-size: cover;
+        background-repeat: no-repeat;
     }
 
     .wrapper {
         height: 430px;
         overflow: hidden;
-    }
 
-    .wrapper img {
+        img {
         position: relative;     
         top: -50px;
+        }
     }
 
     .icon-footer img{
@@ -148,16 +241,9 @@ export default {
     .btn-footer{
         border: 2px solid #0282f9;
         padding: 13px;
-    }
-
-    a {
         text-decoration: none;
         color: #ffff;
         text-transform: uppercase;
-
-        &:hover{
-            color: #ffff;
-        }
     }
 
 </style>

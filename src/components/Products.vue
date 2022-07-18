@@ -138,7 +138,6 @@ export default {
         width: 220px;
         position: relative;
         bottom: 30px;
-        left: 100px;
 
         h3{
             text-align: center;
