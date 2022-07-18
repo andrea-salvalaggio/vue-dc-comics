@@ -1,54 +1,35 @@
 <template>
     <div class="products-bg">
-        <div class="container d-flex flex-wrap">
-            <div class="product-card">
+        <div class="jumbo-container">
+            <img src="../assets/img/jumbotron.jpg" alt="DC Banner Image">
+        </div>
+        <div class="title-container">
+            <h3>Current Series</h3>
+        </div>
+        <div class="container d-flex justify-content-center flex-wrap">
+            <ProductCard  class="product-card" v-for="(product, index) in products" :key="index" :imgUrl="product.thumb" :title="product.series"/>
+
+            <!-- <div class="product-card" v-for="(product, index) in products" :key="index">
                 <div class="img-container">
-                    <img src="https://www.dccomics.com/sites/default/files/styles/covers192x291/public/comic-covers/2018/09/AC1000_DLX_162-001_HD_5ba13723281ab0.37845353.jpg?itok=ZsI-C5eX" alt="">
+                    <img :src="product.thumb" :alt="product.series">
                 </div>
-                <h6 class="mb-0">Action Comics</h6>
-            </div>
-            <div class="product-card">
-                <div class="img-container">
-                    <img src="https://www.dccomics.com/sites/default/files/styles/covers192x291/public/comic-covers/2018/09/AC1000_DLX_162-001_HD_5ba13723281ab0.37845353.jpg?itok=ZsI-C5eX" alt="">
-                </div>
-                <h6 class="mb-0">Action Comics</h6>
-            </div>
-            <div class="product-card">
-                <div class="img-container">
-                    <img src="https://www.dccomics.com/sites/default/files/styles/covers192x291/public/comic-covers/2018/09/AC1000_DLX_162-001_HD_5ba13723281ab0.37845353.jpg?itok=ZsI-C5eX" alt="">
-                </div>
-                <h6 class="mb-0">Action Comics</h6>
-            </div>
-            <div class="product-card">
-                <div class="img-container">
-                    <img src="https://www.dccomics.com/sites/default/files/styles/covers192x291/public/comic-covers/2018/09/AC1000_DLX_162-001_HD_5ba13723281ab0.37845353.jpg?itok=ZsI-C5eX" alt="">
-                </div>
-                <h6 class="mb-0">Action Comics</h6>
-            </div>
-            <div class="product-card">
-                <div class="img-container">
-                    <img src="https://www.dccomics.com/sites/default/files/styles/covers192x291/public/comic-covers/2018/09/AC1000_DLX_162-001_HD_5ba13723281ab0.37845353.jpg?itok=ZsI-C5eX" alt="">
-                </div>
-                <h6 class="mb-0">Action Comics</h6>
-            </div>
-            <div class="product-card">
-                <div class="img-container">
-                    <img src="https://www.dccomics.com/sites/default/files/styles/covers192x291/public/comic-covers/2018/09/AC1000_DLX_162-001_HD_5ba13723281ab0.37845353.jpg?itok=ZsI-C5eX" alt="">
-                </div>
-                <h6 class="mb-0">Action Comics</h6>
-            </div>
-            <div class="product-card">
-                <div class="img-container">
-                    <img src="https://www.dccomics.com/sites/default/files/styles/covers192x291/public/comic-covers/2018/09/AC1000_DLX_162-001_HD_5ba13723281ab0.37845353.jpg?itok=ZsI-C5eX" alt="">
-                </div>
-                <h6 class="mb-0">Action Comics</h6>
-            </div>
+                <h6 class="mb-0"> {{ product.series }}</h6>
+            </div> -->
+            <button class="btn-load">Load More</button>
         </div>
     </div>
 </template>
 
 <script>
+import ProductCard from './ProductCard.vue'
+
 export default {
+
+    name: 'Products',
+    components: {
+        ProductCard,
+    },
+
     data: function(){
         return{
             products:[
@@ -131,7 +112,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
     .products-bg{
         width: 100%;
         background-color: #1c1c1c;
@@ -140,26 +120,45 @@ export default {
             width: calc((100% / 6) - 20px);
             margin: 20px 10px;
         }
-        .img-container{
-            width: 200px;
-            height: 200px;
-            margin: 0 auto;
-        }
+    }
 
-        .img-container img{
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: top;
-        }
+    .jumbo-container{
+        width: 100%;
+        height: 300px;
 
-        h6{
-            color: white;
+        img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+        }
+    }
+
+    .title-container{
+        width: 220px;
+        position: relative;
+        bottom: 30px;
+        left: 100px;
+
+        h3{
+            text-align: center;
             text-transform: uppercase;
-            font-weight: 400;
-            margin-top: 10px;
+            color: white;
+            background-color: #0282f9;
+            padding: 10px 10px;
         }
+    }
 
+    .btn-load{
+        border: none;
+        color: white;
+        text-transform: uppercase;
+        font-size: 13px;
+        letter-spacing: .5px;
+        background-color: #0282f9;
+        padding: 5px 50px;
+        margin-top: 40px;
+        margin-bottom: 20px;
     }
 
 </style>
