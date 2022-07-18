@@ -3,18 +3,20 @@
         <div class="py-3">
             <img src="../assets/img/dc-logo.png" alt="DC logo">
         </div>
-        <ul class="m-0 p-0">
-            <li>Characters</li>
-            <li class="active">Comics</li> 
-            <li>Movies</li>
-            <li>Tv</li>
-            <li>Games</li>
-            <li>Collectibles</li>
-            <li>Videos</li>
-            <li>Fans</li>
-            <li>News</li>
-            <li>Shop</li>
-        </ul>
+        <nav>
+            <ul class="m-0 p-0">
+                <li>Characters</li>
+                <li class="active">Comics</li> 
+                <li>Movies</li>
+                <li>Tv</li>
+                <li>Games</li>
+                <li>Collectibles</li>
+                <li>Videos</li>
+                <li>Fans</li>
+                <li>News</li>
+                <li>Shop</li>
+            </ul>
+        </nav>
     </header>
 </template>
 
