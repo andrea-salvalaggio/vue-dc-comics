@@ -5,8 +5,8 @@
         </div>
         <nav>
             <ul class="m-0 p-0">
-                <li>Characters</li>
-                <li class="active">Comics</li> 
+                <li v-for="(link, index) in links" :key="index"> <a href="link.url"> {{ link.text }} </a></li>
+                <!-- <li class="active">Comics</li> 
                 <li>Movies</li>
                 <li>Tv</li>
                 <li>Games</li>
@@ -14,7 +14,7 @@
                 <li>Videos</li>
                 <li>Fans</li>
                 <li>News</li>
-                <li>Shop</li>
+                <li>Shop</li> -->
             </ul>
         </nav>
     </header>
@@ -23,6 +23,52 @@
 <script>
 export default {
 
+    data: function(){
+        return{
+            links: [
+                {
+                    text: "Characters",
+                    url: "#",
+                },
+                {
+                    text: "Comics",
+                    url: "#",
+                },
+                {
+                    text: "Movies",
+                    url: "#",
+                },
+                {
+                    text: "Tv",
+                    url: "#",
+                },
+                {
+                    text: "Games",
+                    url: "#",
+                },
+                {
+                    text: "Collectibles",
+                    url: "#",
+                },
+                {
+                    text: "Videos",
+                    url: "#",
+                },
+                {
+                    text: "Fans",
+                    url: "#",
+                },
+                {
+                    text: "News",
+                    url: "#",
+                },
+                {
+                    text: "Shop",
+                    url: "#",
+                },
+            ],
+        }
+    }
 }
 </script>
 
@@ -41,16 +87,20 @@ export default {
         margin: 0 15px;
         text-transform: uppercase;
         font-size: 13px;
-        line-height: 50px;
 
-        &.active{
+        a{
+            color: black;
+            text-decoration: none;
+
+            &.active{
             color: #0282f9;
             border-bottom: 3px solid #0282f9;
-        }
+            }
 
-        &:hover{
-            color: #0282f9;
-            border-bottom: 3px solid #0282f9;
+            &:hover{
+                color: #0282f9;
+                border-bottom: 3px solid #0282f9;
+            }
         }
     }
 
